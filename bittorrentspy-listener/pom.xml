@@ -9,4 +9,46 @@
 	</parent>
 	<groupId>com.github.resresd.resresd-parent.resresd-bittorrentspy</groupId>
 	<artifactId>bittorrentspy-listener</artifactId>
+
+	<properties>
+		<main.class>com.github.resresd.bittorrentspy.listener.init.ListenerInit</main.class>
+	</properties>
+	<build>
+		<plugins>
+			<!--JAR -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>make-Hub</id>
+						<phase>package</phase>
+						<configuration>
+							<finalName>${project.artifactId}-${project.version}+git-${git.commit.id.full}</finalName>
+							<archive>
+								<manifest>
+									<mainClass>${main.class}</mainClass>
+								</manifest>
+							</archive>
+							<descriptorRefs>
+								<descriptorRef>jar-with-dependencies</descriptorRef>
+							</descriptorRefs>
+						</configuration>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!--JAR -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<executable>java</executable>
+					<mainClass>${main.class}</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
