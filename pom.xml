@@ -11,6 +11,7 @@
 		<module>bittorrentspy-libs</module>
 		<module>bittorrentspy-listener</module>
 		<module>bittorrentspy-hub</module>
+		<module>bittorrentspy-operator</module>
 	</modules>
 
 	<properties>

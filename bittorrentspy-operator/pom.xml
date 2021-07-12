@@ -8,5 +8,5 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>com.github.resresd.resresd-parent.resresd-bittorrentspy</groupId>
-	<artifactId>bittorrentspy-libs</artifactId>
+	<artifactId>bittorrentspy-operator</artifactId>
 </project>
